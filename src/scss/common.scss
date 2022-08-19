@@ -1,1 +1,135 @@
-// Заголовки, общие БЄМ блоки и проче...
+//<ОСНОВНОЙ БЛОК>====================================================================================================
+%text_1 {
+    font-size: rem(12);
+    line-height: math.div(14, 12);
+}
+
+%text_2 {
+    font-weight: 300;
+    line-height: math.div(19, 16);
+}
+
+%text_3 {
+    @include adaptiveValue("font-size", 22, 18);
+    line-height: math.div(32, 22);
+}
+
+%text_4 {
+    @include adaptiveValue("font-size", 18, 16);
+    line-height: math.div(22, 18);
+}
+
+%title {
+    font-weight: 800;
+    @include adaptiveValue("font-size", 80, 40);
+    line-height: math.div(86, 80);
+    text-transform: uppercase;
+}
+
+%title_2 {
+    @extend %title;
+    @include adaptiveValue("font-size", 40, 24);
+}
+
+%text_bg {
+    @extend %title;
+    @include adaptiveValue("font-size", 200, 100);
+    line-height: math.div(156, 200);
+}
+
+%line {
+    flex: 0 0 rem(80);
+    width: rem(80);
+    height: rem(1);
+    background-color: $white;
+    opacity: 0.5;
+    @media (max-width: $mobileSmall) {
+        width: rem(40);
+        flex: 0 0 rem(40);
+    }
+}
+
+%no-anim {
+    opacity: 0;
+    visibility: hidden;
+}
+
+%anim {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(0px, 0px);
+}
+
+// Navigation ========================================================================================================================================================
+.navigation {
+    flex: 1 1 auto;
+    position: relative;
+    z-index: 20;
+    pointer-events: none;
+
+    // ANIMATION ========================================================================================================================================================
+    @extend %no-anim;
+    transition: opacity 0.8s ease 0s, visibility 0.8s ease 0s;
+    &._watcher-view {
+        @extend %anim;
+    }
+    // ANIMATION ========================================================================================================================================================
+
+    &__wrap {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        pointer-events: none;
+        gap: rem(20);
+    }
+
+    &__item {
+        pointer-events: all;
+        font-size: rem(20);
+        color: $white;
+        transition: opacity 0.3s ease 0s;
+        opacity: 0.25;
+        &_prev {
+            transform: rotate(-180deg);
+        }
+
+        &_next {
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                opacity: 1;
+            }
+        }
+        .navigation_top & {
+            opacity: 1;
+            @media (any-hover: hover) {
+                &:hover {
+                    color: $blue;
+                }
+            }
+        }
+    }
+}
+// Slider========================================================================================================================================================
+
+/* Ограничивающая оболочка */
+.slick-list {
+    overflow: hidden;
+    margin: rem(-40);
+}
+/* Лента слайдов */
+.slick-track {
+    display: flex;
+}
+/* Слайд */
+.slick-slide {
+    margin: rem(40);
+}
+
+/* Элемент точки */
+.slick-dots li button {
+    font-size: 0;
+}
+
+//</ГОТОВЫЕ КЛАССЫ>====================================================================================================

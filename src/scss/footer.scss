@@ -1,3 +1,43 @@
-//====================================================================================================
+.footer {
+    @include adaptiveValue("padding-top", 100, 30, 1280, 479.98, 1);
+    padding-bottom: rem(30);
+    &__container {
+        text-align: center;
+    }
 
-//====================================================================================================
+    &__logo {
+        margin: 0 auto;
+        @include adaptiveValue("margin-bottom", 30, 20, 1280, 479.98, 1);
+        max-width: rem(172);
+        img {
+            max-width: 100%;
+        }
+
+        // ANIMATION ========================================================================================================================================================
+        @extend %no-anim;
+        transform: translate(0px, 50%);
+        transition: opacity 0.8s ease 0s, visibility 0.8s ease 0s, transform 0.8s ease 0s;
+        &._watcher-view {
+            @extend %anim;
+        }
+        // ANIMATION ========================================================================================================================================================
+    }
+
+    &__copy {
+        font-weight: 300;
+        @extend %text_1;
+        letter-spacing: rem(1.05);
+        text-transform: uppercase;
+        color: $white;
+
+        // ANIMATION ========================================================================================================================================================
+        @extend %no-anim;
+        transform: translate(0px, 50%);
+        transition: opacity 0.8s ease 0s, visibility 0.8s ease 0s, transform 0.8s ease 0s;
+        &._watcher-view {
+            @extend %anim;
+            opacity: 0.5;
+        }
+        // ANIMATION ========================================================================================================================================================
+    }
+}

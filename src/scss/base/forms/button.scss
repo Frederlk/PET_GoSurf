@@ -1,14 +1,54 @@
-//<BUTTONS (a.btn+tab)>
-// Снипет (HTML): btn
-
-.button {
-	display: inline-flex;
-	padding: 0px 0px;
-	@media (any-hover: hover) {
-		&:hover {
-		}
-	}
-	&._fw {
-		width: 100%;
-	}
+.btn {
+    display: inline-flex;
+    @extend %title_2;
+    line-height: 90%;
+    color: $white;
+    align-items: center;
+    .btn-line {
+        width: rem(20);
+        height: rem(1);
+        background-color: $white;
+        margin-right: rem(8);
+        transition: background-color 0.3s ease 0s;
+    }
+    .btn-bg {
+        margin-left: rem(8);
+        min-height: rem(80);
+        display: flex;
+        align-items: center;
+        position: relative;
+        span {
+            &::before {
+                margin: 0px rem(16);
+                font-size: rem(20);
+            }
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            width: calc(100% - rem(10));
+            height: 100%;
+            top: 0;
+            left: rem(10);
+            z-index: -1;
+            background-color: $blue;
+            transition: background-color 0.3s ease 0s;
+        }
+        @media (max-width: $mobile) {
+            min-height: rem(60);
+        }
+    }
+    @media (any-hover: hover) {
+        &:hover {
+            color: $blue;
+            .btn-bg {
+                &::after {
+                    background-color: $white;
+                }
+            }
+            .btn-line {
+                background-color: $blue;
+            }
+        }
+    }
 }

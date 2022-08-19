@@ -8,23 +8,27 @@ textarea {
     -moz-appearance: none;
     appearance: none;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 .input {
-    border-radius: 0 !important;
     width: 100%;
     display: block;
-    padding: 0px 20px;
-    border: 1px solid #eee;
+    padding: rem(5) rem(15);
+    border: rem(1) solid transparent;
+    @extend %text_2;
+    letter-spacing: rem(1.4);
+    color: $dark;
     &:focus-visible {
         outline-offset: rem(-1);
         outline: white solid rem(1);
     }
+
     &._form-focus {
     }
     &._form-error {
         color: red;
     }
-}
-textarea.input {
-    resize: none;
-    padding: 0px 0px;
 }

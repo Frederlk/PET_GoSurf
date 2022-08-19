@@ -128,6 +128,7 @@
     &::-webkit-scrollbar-thumb {
         background: $foreground-color;
         overflow: hidden;
+        border-radius: rem(4);
     }
 
     &::-webkit-scrollbar-track {
