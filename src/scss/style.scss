@@ -173,6 +173,6 @@ body {
     }
     &__shop {
         @include adaptiveValue("padding-top", 300, 100, 1280, 479.98, 1);
-        @include adaptiveValue("margin-bottom", 180, 100, 1280, 479.98, 1);
+        @include adaptiveValue("margin-bottom", 180, 70, 1280, 479.98, 1);
     }
 }

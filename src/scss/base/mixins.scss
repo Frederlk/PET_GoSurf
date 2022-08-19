@@ -23,21 +23,6 @@
     $result: math.div($px, $current) + em;
     @return $result;
 }
-//Адаптивное свойство
-
-//Currency
-@mixin currency($sym) {
-    &::after {
-        content: "#{$sym}";
-    }
-}
-
-// Grids
-@mixin gridCards($type: fit, $min: 280px, $max: 1fr, $gap: 30px) {
-    display: grid;
-    gap: $gap;
-    grid-template-columns: repeat(auto-#{$type}, minmax($min, $max));
-}
 
 // Адаптивное свойство (clamp)
 @mixin adaptiveValue($property, $startSize, $minSize, $widthFrom: $containerWidth, $widthTo: $minWidth, $keepSize: 0) {
@@ -97,26 +82,6 @@
         }
     }
 }
-
-//========================================================================================================================================================
-@mixin inViewBasic($startPosX, $startPosY, $speed, $delay, $child: false) {
-    transform: translate($startPosX, $startPosY);
-    transition: transform #{$speed}s ease #{$delay}s, opacity #{$speed}s ease #{$delay}s;
-    opacity: 0;
-    @if ($child == true) {
-        ._watcher-view & {
-            opacity: 1 !important;
-            transform: translate(0px, 0px) !important;
-        }
-    } @else {
-        &._watcher-view {
-            opacity: 1 !important;
-            transform: translate(0px, 0px) !important;
-        }
-    }
-}
-
-//========================================================================================================================================================
 
 @mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white, 50%)) {
     // For Google Chrome
