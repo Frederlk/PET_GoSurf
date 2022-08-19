@@ -405,7 +405,7 @@
 
         // ANIMATION ========================================================================================================================================================
         @extend %no-anim;
-        transition: opacity 0.5s ease 0.3s, visibility 0.5s ease 0.3s;
+        transition: opacity 0.8s ease 0.3s, visibility 0.8s ease 0.3s;
         &._watcher-view {
             @extend %anim;
             opacity: 0.02;
@@ -422,7 +422,7 @@
         // ANIMATION ========================================================================================================================================================
         @extend %no-anim;
         transform: translate(50%, 0px) !important;
-        transition: transform 0.5s ease 0.3s, opacity 0.5s ease 0.3s, visibility 0.5s ease 0.3s;
+        transition: transform 0.8s ease 0.3s, opacity 0.8s ease 0.3s, visibility 0.8s ease 0.3s;
         &._watcher-view {
             @extend %anim;
             opacity: 0.02 !important;
@@ -457,7 +457,7 @@
         // ANIMATION ========================================================================================================================================================
         @extend %no-anim;
         transform: translate(-50%, 0px);
-        transition: transform 0.5s ease 0s, opacity 0.5s ease 0s, visibility 0.5s ease 0s;
+        transition: transform 0.8s ease 0s, opacity 0.8s ease 0s, visibility 0.8s ease 0s;
         &._watcher-view {
             @extend %anim;
         }
@@ -469,7 +469,7 @@
         // ANIMATION ========================================================================================================================================================
         @extend %no-anim;
         transform: translate(50%, 0px);
-        transition: transform 0.5s ease 0.5s, opacity 0.5s ease 0.5s, visibility 0.5s ease 0.5s;
+        transition: transform 0.8s ease 0.5s, opacity 0.8s ease 0.5s, visibility 0.8s ease 0.5s;
         &._watcher-view {
             @extend %anim;
         }
@@ -539,7 +539,7 @@
 
         // ANIMATION ========================================================================================================================================================
         @extend %no-anim;
-        transition: opacity 0.5s ease 0.5s, visibility 0.5s ease 0.5s;
+        transition: opacity 0.8s ease 0.5s, visibility 0.8s ease 0.5s;
         &._watcher-view {
             @extend %anim;
         }
@@ -557,7 +557,7 @@
         // ANIMATION ========================================================================================================================================================
         @extend %no-anim;
         transform: translate(100%, 0px);
-        transition: opacity 0.5s ease 0.8s, visibility 0.5s ease 0.8s;
+        transition: opacity 0.8s ease 0.8s, visibility 0.8s ease 0.8s;
         &._watcher-view {
             @extend %anim;
         }
@@ -606,7 +606,7 @@
     max-width: rem(94);
     // ANIMATION ========================================================================================================================================================
     @extend %no-anim;
-    transition: opacity 0.5s ease 0.6s, visibility 0.5s ease 0.6s;
+    transition: opacity 0.8s ease 0.6s, visibility 0.8s ease 0.6s;
     &._watcher-view {
         @extend %anim;
         // transform: translate3d(0, 0, 0) !important;
@@ -978,432 +978,463 @@
     }
 }
 
-// //========================================================================================================================================================
+//========================================================================================================================================================
 
-// .travel-sleep {
-//     &__wrapper {
-//         position: relative;
-//     }
+.travel-sleep {
+    position: relative;
+    &__top {
+        @include adaptiveValue("margin-bottom", 185, 30);
+    }
 
-//     &__top {
-//         @include adaptiveValue("margin-bottom", 185, 30);
-//     }
+    &__title {
+        h2 {
+            display: inline-flex;
+            position: relative;
+            @extend %title;
+            @include adaptiveValue("margin-left", 165, 0);
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                right: 0;
+                @include adaptiveValue("width", 80, 40);
+                height: rem(1);
+                background-color: $blue;
+            }
+        }
 
-//     &__title {
-//         h2 {
-//             display: inline-flex;
-//             position: relative;
-//             @extend %title;
-//             @include adaptiveValue("margin-left", 165, 0);
-//             &::before {
-//                 content: "";
-//                 position: absolute;
-//                 top: 0;
-//                 right: 0;
-//                 @include adaptiveValue("width", 80, 40);
-//                 height: 1px;
-//                 background-color: $blue;
-//             }
-//         }
-//         @extend %no-anim;
-//         transform: translate(-5%, 0px);
-//         transition: all 0.5s ease 0.3s;
-//         &._watcher-view {
-//             @extend %anim;
-//         }
-//     }
+        // ANIMATION ========================================================================================================================================================
+        @extend %no-anim;
+        transform: translate(-5%, 0px);
+        transition: opacity 0.8s ease 0.3s, visibility 0.8s ease 0.3s, transform 0.8s ease 0.3s;
+        &._watcher-view {
+            @extend %anim;
+        }
+        // ANIMATION ========================================================================================================================================================
+    }
 
-//     &__bg-text {
-//         position: absolute;
-//         @include adaptiveValue("top", 20, 0);
-//         @include adaptiveValue("left", -45, -0);
-//         @extend %text_bg;
-//         @extend %no-anim;
-//         transition: all 0.5s ease 0.3s;
-//         &._watcher-view {
-//             @extend %anim;
-//             opacity: 0.02;
-//         }
-//     }
+    &__bg-text {
+        position: absolute;
+        @include adaptiveValue("top", 180, 40);
+        @include adaptiveValue("left", -45, -0);
+        @extend %text_bg;
 
-//     &__body {
-//         position: relative;
-//     }
+        // ANIMATION ========================================================================================================================================================
+        @extend %no-anim;
+        transition: opacity 0.8s ease 0.3s, visibility 0.8s ease 0.3s;
+        &._watcher-view {
+            @extend %anim;
+            opacity: 0.02;
+        }
+        // ANIMATION ========================================================================================================================================================
+    }
 
-//     &__navigation {
-//         @include adaptiveValue("margin-top", 150, 120);
-//         position: absolute;
-//         width: 100%;
-//         height: 20px;
-//         top: 0;
-//         left: 50%;
-//         transform: translate(-50%, 0px);
-//         transition: all 0.8s ease 0.5s;
-//         &._watcher-view {
-//             transform: translate(-50%, 0px);
-//         }
-//     }
+    &__body {
+        position: relative;
+    }
 
-//     &__slider {
-//         overflow: visible;
-//     }
+    &__navigation {
+        @include adaptiveValue("margin-top", 150, 120);
+        position: absolute;
+        width: 100%;
+        height: rem(20);
+        top: 0;
+        left: 50%;
+        .navigation__wrap {
+            padding: 0 rem(15);
+        }
+        // ANIMATION ========================================================================================================================================================
+        @extend %no-anim;
+        transform: translate(-50%, 0px);
+        transition: opacity 0.8s ease 0.5s, visibility 0.8s ease 0.5s, transform 0.8s ease 0.5s;
+        &._watcher-view {
+            @extend %anim;
+            transform: translate(-50%, 0px);
+        }
+        // ANIMATION ========================================================================================================================================================
+    }
 
-//     &__slide {
-//         transition: all 0.8s ease 0s;
-//         &.slick-active {
-//             opacity: 1;
-//             visibility: visible;
-//         }
-//     }
-//     &__cocktail {
-//         position: absolute;
-//         right: 0;
-//         z-index: 5;
-//         bottom: -250px;
-//         @include adaptiveValue("max-width", 565, 300);
-//         img {
-//             max-width: 100%;
-//             @include adaptiveValue("width", 565, 300);
-//         }
-//         @media (max-width: $pc) {
-//             transform: translate(44%, 0px);
-//         }
-//         @media (max-width: $tablet) {
-//             transform: translate(44%, 0px) scale(0.8);
-//         }
-//         @media (max-width: $mobile) {
-//             display: none;
-//         }
-//         &_flower {
-//             bottom: -40px;
-//             @include adaptiveValue("max-width", 345, 200);
-//             img {
-//                 max-width: 100%;
-//             }
-//             @media (max-width: $tablet) {
-//                 bottom: -80px;
-//             }
-//         }
-//         @extend %no-anim;
-//         transform: translate(100%, 0px);
-//         transition: all 0.8s ease 0s;
-//         &._watcher-view {
-//             @extend %anim;
-//             transform: translate(44%, 0px);
-//         }
-//     }
-// }
-// .slide-travel-sleep {
-//     &__top {
-//         position: relative;
-//         z-index: 2;
-//         display: flex;
-//         flex-direction: column;
-//         align-items: flex-end;
-//         @include adaptiveValue("margin-bottom", -180, 40);
-//         @extend %no-anim;
-//         transition: all 0.5s ease 0.5s;
-//         transform: translate(5%, 0px);
-//         &._watcher-view {
-//             @extend %anim;
-//         }
-//     }
+    &__slider {
+        overflow: visible;
+    }
 
-//     &__subtitle {
-//         @extend %text_3;
-//         letter-spacing: 7.33333px;
-//         text-transform: uppercase;
-//         opacity: 0.5;
-//         display: flex;
-//         align-items: center;
-//         margin: 0px 0px 8px 0px;
-//         span {
-//             @include adaptiveValue("margin-right", 25, 15);
-//             @extend %line;
-//         }
-//     }
+    &__slide {
+        transition: opacity 0.8s ease 0s, visibility 0.8s ease 0s;
+        &.slick-active {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+    &__cocktail {
+        position: absolute;
+        right: 0;
+        z-index: 5;
+        bottom: rem(-250);
+        @include adaptiveValue("max-width", 565, 300);
+        img {
+            max-width: 100%;
+            @include adaptiveValue("width", 565, 300);
+        }
+        @media (max-width: $pc) {
+            transform: translate(44%, 0px);
+        }
+        @media (max-width: $tablet) {
+            transform: translate(44%, 0px) scale(0.8);
+        }
+        @media (max-width: $mobile) {
+            display: none;
+        }
+        &_flower {
+            bottom: rem(-40);
+            @include adaptiveValue("max-width", 345, 200);
+            img {
+                max-width: 100%;
+            }
+            @media (max-width: $tablet) {
+                bottom: rem(-80);
+            }
+        }
 
-//     &__title {
-//         @extend %title_2;
-//         span {
-//             font-weight: 200;
-//         }
-//         .slide-travel-sleep__company {
-//             @include adaptiveValue("margin-left", 25, 15);
-//             max-width: 52px;
-//             img {
-//                 transform: translate(0px, -8px);
-//                 max-width: 100%;
-//             }
-//         }
-//         &_stars {
-//             display: flex;
-//             align-items: center;
-//         }
-//     }
-//     &__stars {
-//         display: flex;
-//         align-items: center;
-//         @include adaptiveValue("margin-left", 20, 10);
-//         span {
-//             margin: -5px -10px 0px -10px;
-//             img {
-//                 max-width: 100%;
-//             }
-//         }
-//     }
+        // ANIMATION ========================================================================================================================================================
+        @extend %no-anim;
+        transform: translate(100%, 0px);
+        transition: opacity 0.8s ease 0s, visibility 0.8s ease 0s, transform 0.8s ease 0s;
+        &._watcher-view {
+            @extend %anim;
+            transform: translate(44%, 0px);
+        }
+        // ANIMATION ========================================================================================================================================================
+    }
+}
 
-//     &__body {
-//         position: relative;
-//         display: flex;
-//     }
+.slide-travel-sleep {
+    &__top {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        @include adaptiveValue("margin-bottom", -180, 40);
 
-//     &__image-shore {
-//         flex: 0 1 1115 / 1140 * 100%;
-//         min-height: 780px;
-//         @media (max-width: em(1440)) {
-//             flex: 0 1 1115px;
-//         }
-//         @media (max-width: $pc) {
-//             min-height: auto;
-//         }
-//         img {
-//             max-width: 100%;
-//         }
-//         @extend %no-anim;
-//         transition: all 0.8s ease 0.5s;
-//         transform: translate(-10%, 0px);
-//         &._watcher-view {
-//             @extend %anim;
-//         }
-//     }
+        // ANIMATION ========================================================================================================================================================
+        @extend %no-anim;
+        transform: translate(5%, 0px);
+        transition: opacity 0.8s ease 0.5s, visibility 0.8s ease 0.5s, transform 0.8s ease 0.5s;
+        &._watcher-view {
+            @extend %anim;
+        }
+        // ANIMATION ========================================================================================================================================================
+    }
 
-//     &__image-plane {
-//         position: absolute;
-//         bottom: -20px;
-//         right: 0;
-//         display: inline-flex;
-//         transform: rotate(10deg);
-//         max-width: 750px;
-//         @media (max-width: $pc) {
-//             max-width: 650px;
-//             bottom: 0;
-//         }
-//         @media (max-width: $tablet) {
-//             max-width: 550px;
-//         }
-//         @media (max-width: $mobile) {
-//             max-width: 400px;
-//             bottom: 20px;
-//         }
-//         @media (max-width: 600px) {
-//             display: none;
-//         }
-//         img {
-//             max-width: 100%;
-//         }
-//         @extend %no-anim;
-//         transition: all 0.8s ease 0.8s;
-//         transform: rotate(10deg) translate(100%, 0px);
-//         &._watcher-view {
-//             @extend %anim;
-//             transform: rotate(10deg) translate(0px, 0px);
-//         }
-//         &_sleep {
-//             transform: rotate(0deg) translate(100%, 0px);
-//             @include adaptiveValue("max-width", 565, 300);
-//             bottom: 0;
-//             right: -60px;
-//             span {
-//                 position: absolute;
-//                 transform: rotate(-150deg);
-//                 max-width: 146px;
-//                 bottom: -70px;
-//                 right: 20px;
-//             }
-//         }
-//     }
+    &__subtitle {
+        @extend %text_3;
+        letter-spacing: em(7.3);
+        text-transform: uppercase;
+        opacity: 0.5;
+        display: flex;
+        align-items: center;
+        margin-bottom: rem(8);
+        span {
+            @include adaptiveValue("margin-right", 25, 15);
+            @extend %line;
+        }
+    }
 
-//     &__bottom {
-//         position: relative;
-//         z-index: 2;
-//         @include adaptiveValue("margin-top", -100, 0);
-//         @include adaptiveValue("margin-bottom", 110, 10);
-//         .slide-travel-sleep__subtitle {
-//             span {
-//                 margin-right: 0;
-//                 @include adaptiveValue("margin-left", 25, 15);
-//             }
-//         }
+    &__title {
+        @extend %title_2;
+        span {
+            font-weight: 200;
+        }
+        .slide-travel-sleep__company {
+            @include adaptiveValue("margin-left", 25, 15);
+            max-width: rem(52);
+            img {
+                transform: translate(0px, rem(-8));
+                max-width: 100%;
+            }
+        }
+        &_stars {
+            display: flex;
+            align-items: center;
+        }
+    }
+    &__stars {
+        display: flex;
+        align-items: center;
+        @include adaptiveValue("margin-left", 20, 10);
+        span {
+            margin: rem(-5) rem(-10) 0px rem(-10);
+            img {
+                max-width: 100%;
+            }
+        }
+    }
 
-//         @extend %no-anim;
-//         transition: all 0.5s ease 0.3s;
-//         transform: translate(-5%, 0px);
-//         &._watcher-view {
-//             @extend %anim;
-//         }
-//     }
+    &__body {
+        position: relative;
+        display: flex;
+    }
 
-//     &__info {
-//     }
+    &__image-shore {
+        flex: 0 1 percent(1115, 1140);
+        min-height: rem(780);
+        @media (max-width: em(1440)) {
+            flex: 0 1 rem(1115);
+        }
+        @media (max-width: $pc) {
+            min-height: auto;
+        }
+        img {
+            max-width: 100%;
+        }
 
-//     &__row {
-//         display: flex;
-//         margin: 0px -10px;
-//         @include adaptiveValue("margin-bottom", 190, 50);
-//         @media (max-width: $tablet) {
-//             @include adaptiveValue("margin-bottom", 60, 40);
-//         }
-//         @media (max-width: $mobile) {
-//             flex-wrap: wrap;
-//             @include adaptiveValue("margin-bottom", 30, 10);
-//         }
-//     }
+        // ANIMATION ========================================================================================================================================================
+        @extend %no-anim;
+        transform: translate(-10%, 0px);
+        transition: opacity 0.8s ease 0.5s, visibility 0.8s ease 0.5s, transform 0.8s ease 0.5s;
+        &._watcher-view {
+            @extend %anim;
+        }
+        // ANIMATION ========================================================================================================================================================
+    }
 
-//     &__column {
-//         padding: 0px 10px;
-//         flex: 0 1 25%;
-//         position: relative;
-//         @media (max-width: $mobile) {
-//             flex: 0 1 50%;
-//             @include adaptiveValue("margin-bottom", 30, 20);
-//         }
-//         @media (max-width: $mobileSmall) {
-//             flex: 1 1 100%;
-//         }
-//         &._watcher-view {
-//             .slide-travel-sleep__label {
-//                 opacity: 0.5;
-//                 visibility: visible;
-//                 transform: rotate(-90deg) translate(-40%, 0);
-//                 @media (max-width: $mobile) {
-//                     transform: translate(0px, 0px);
-//                 }
-//             }
-//             .slide-travel-sleep__text {
-//                 @extend %anim;
-//             }
-//         }
-//     }
+    &__image-plane {
+        position: absolute;
+        bottom: rem(-20);
+        right: 0;
+        display: inline-flex;
+        transform: rotate(10deg);
+        max-width: rem(750);
+        @media (max-width: $pc) {
+            max-width: rem(650);
+            bottom: 0;
+        }
+        @media (max-width: $tablet) {
+            max-width: rem(550);
+        }
+        @media (max-width: $mobile) {
+            max-width: rem(400);
+            bottom: rem(20);
+        }
+        @media (max-width: em(600)) {
+            display: none;
+        }
+        img {
+            max-width: 100%;
+        }
+        &_sleep {
+            transform: rotate(0deg) translate(40%, 0px);
+            @include adaptiveValue("max-width", 565, 300);
+            bottom: 0;
+            right: rem(-60);
+            span {
+                position: absolute;
+                transform: rotate(-150deg);
+                max-width: rem(146);
+                bottom: rem(-70);
+                right: rem(20);
+            }
+        }
 
-//     &__label {
-//         position: absolute;
-//         top: 0;
-//         left: -25%;
-//         text-align: right;
-//         font-size: 18px;
-//         line-height: 22 / 18 * 100%;
-//         letter-spacing: 8px;
-//         text-transform: uppercase;
-//         width: 200px;
-//         white-space: nowrap;
-//         opacity: 0;
-//         visibility: hidden;
-//         transform: rotate(-90deg) translate(-100%, 0);
-//         transition: all 0.8s ease 0s;
-//         @media (max-width: $pc) {
-//             left: -27%;
-//         }
-//         @media (max-width: 1100px) {
-//             left: -30%;
-//         }
-//         @media (max-width: $tablet) {
-//             position: relative;
-//             left: 0;
-//             transform: translate(0px, 0px);
-//             white-space: wrap;
-//             width: auto;
-//             text-align: left;
-//             margin-bottom: 8px;
-//         }
-//     }
+        // ANIMATION ========================================================================================================================================================
+        @extend %no-anim;
+        transform: rotate(10deg) translate(100%, 0px);
+        transition: opacity 0.8s ease 0.8s, visibility 0.8s ease 0.8s, transform 0.8s ease 0.8s;
+        &._watcher-view {
+            @extend %anim;
+            transform: rotate(10deg) translate(0px, 0px);
+        }
+        // ANIMATION ========================================================================================================================================================
+    }
 
-//     &__text {
-//         @include adaptiveValue("padding-left", 40, 20);
-//         @extend %title_2;
-//         line-height: 90%;
-//         @extend %no-anim;
-//         transition: all 0.8s ease 0.7s;
-//         transform: translate(0px, 100%);
-//         .slide-travel-sleep__pricing {
-//             font-weight: 400;
-//             display: flex;
-//             font-size: 14px;
-//             line-height: 36 / 14 * 100%;
-//             text-align: right;
-//             letter-spacing: 5.25px;
-//             opacity: 0.75;
-//             @include adaptiveValue("margin-left", 70, -5);
-//             @media (max-width: 1100px) {
-//                 @include adaptiveValue("margin-left", 60, 0);
-//             }
-//             @media (max-width: $tablet) {
-//                 margin-left: 0;
-//             }
-//         }
-//         @media (max-width: $tablet) {
-//             padding-left: 0;
-//         }
-//     }
-//     &__quantity-wrapper {
-//         position: relative;
-//         display: inline-flex;
-//         align-items: center;
-//         flex-wrap: wrap;
-//         position: relative;
-//     }
-//     &__quantity {
-//         background-color: transparent;
-//         @extend %title_2;
-//         line-height: 90%;
-//         color: $white;
-//         max-height: 36px;
-//         @include adaptiveValue("max-height", 36, 24);
-//         max-width: 45px;
-//         border: none;
-//     }
+    &__bottom {
+        position: relative;
+        z-index: 2;
+        @include adaptiveValue("margin-top", -100, 0);
+        @include adaptiveValue("margin-bottom", 110, 10);
+        .slide-travel-sleep__subtitle {
+            span {
+                margin-right: 0;
+                @include adaptiveValue("margin-left", 25, 15);
+            }
+        }
 
-//     &__quantity-icon {
-//         position: absolute;
-//         bottom: -25px;
-//         right: 0;
-//         transition: all 0.3s ease 0s;
-//         @media (max-width: $mobile) {
-//             bottom: 50%;
-//             right: -60px;
-//             transform: translate(0px, 50%);
-//             &:first-child {
-//                 bottom: calc(50% - 5px);
-//                 right: -30px;
-//             }
-//         }
-//         @media (any-hover: hover) {
-//             &:hover {
-//                 opacity: 0.5;
-//             }
-//         }
-//         &:first-child {
-//             right: 25px;
-//             bottom: -30px;
-//         }
-//         img {
-//             max-width: 14px;
-//         }
-//     }
+        // ANIMATION ========================================================================================================================================================
+        @extend %no-anim;
+        transform: translate(-5%, 0px);
+        transition: opacity 0.8s ease 0.3s, visibility 0.8s ease 0.3s, transform 0.8s ease 0.3s;
+        &._watcher-view {
+            @extend %anim;
+        }
+        // ANIMATION ========================================================================================================================================================
+    }
 
-//     &__button {
-//         display: flex;
-//         justify-content: center;
-//         @extend %no-anim;
-//         transition: all 0.8s ease 0s;
-//         transform: translate(0px, 50%);
-//         &._watcher-view {
-//             @extend %anim;
-//         }
-//     }
-// }
+    &__info {
+    }
 
-// //========================================================================================================================================================
+    &__row {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: rem(20);
+        @include adaptiveValue("margin-bottom", 190, 30, 1280, 767.98, 1);
+        @media (max-width: $tablet) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media (max-width: $mobileSmall) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__column {
+        position: relative;
+        // ANIMATION ========================================================================================================================================================
+        &._watcher-view {
+            .slide-travel-sleep__label {
+                opacity: 0.5;
+                visibility: visible;
+                @media (min-width: $tablet) {
+                    transform: rotate(-90deg) translate(-40%, 0);
+                }
+                @media (max-width: $mobile) {
+                    transform: translate(0px, 0px);
+                }
+            }
+            .slide-travel-sleep__text {
+                @extend %anim;
+            }
+        }
+        // ANIMATION ========================================================================================================================================================
+    }
+
+    &__label {
+        position: absolute;
+        left: -30%;
+        text-align: right;
+        font-size: rem(18);
+        line-height: math.div(22, 18);
+        letter-spacing: rem(8);
+        text-transform: uppercase;
+        width: rem(200);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.8s ease 0s, visibility 0.8s ease 0s, transform 0.8s ease 0s;
+        @media (max-width: $pc) {
+            left: -32%;
+        }
+        @media (max-width: em(1100)) {
+            left: -35%;
+        }
+        @media (min-width: $tablet) {
+            top: rem(5);
+            white-space: nowrap;
+            transform: rotate(-90deg) translate(-100%, 0);
+        }
+        @media (max-width: $tablet) {
+            position: relative;
+            top: 0;
+            left: 0;
+            transform: translate(0px, 0px);
+            width: auto;
+            text-align: left;
+            margin-bottom: rem(8);
+        }
+    }
+
+    &__text {
+        @extend %title_2;
+        line-height: 90%;
+        .slide-travel-sleep__pricing {
+            font-weight: 400;
+            display: flex;
+            font-size: rem(14);
+            line-height: math.div(36, 14);
+            text-align: right;
+            letter-spacing: em(5.25);
+            opacity: 0.75;
+            @media (min-width: $tablet) {
+                @include adaptiveValue("margin-left", 70, 20, 1280, 991.98, 1);
+            }
+        }
+        @media (min-width: $tablet) {
+            @include adaptiveValue("padding-left", 40, 20);
+        }
+
+        // ANIMATION ========================================================================================================================================================
+        @extend %no-anim;
+        transform: translate(0px, 100%);
+        transition: opacity 0.8s ease 0.7s, visibility 0.8s ease 0.7s, transform 0.8s ease 0.7s;
+        // ANIMATION ========================================================================================================================================================
+    }
+
+    &__quantity-wrapper {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    &__quantity {
+        background-color: transparent;
+        @extend %title_2;
+        line-height: 90%;
+        color: $white;
+        max-width: rem(45);
+        @include adaptiveValue("max-height", 36, 24);
+        border: none;
+    }
+
+    &__quantity-icon {
+        position: absolute;
+        bottom: rem(-25);
+        height: rem(14);
+        right: 0;
+        transition: opacity 0.3s ease 0s;
+        -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+        -webkit-tap-highlight-color: transparent;
+        &:active {
+            transform: scale(0.9);
+        }
+        &:first-child {
+            right: rem(25);
+            bottom: rem(-30);
+        }
+        img {
+            max-width: rem(14);
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                opacity: 0.5;
+            }
+        }
+        @media (max-width: $mobile) {
+            bottom: 50%;
+            right: rem(-60);
+            transform: translate(0px, 50%);
+            &:active {
+                transform: translate(0px, 50%) scale(0.9);
+            }
+            &:first-child {
+                bottom: calc(50% - rem(5));
+                right: rem(-30);
+            }
+        }
+    }
+
+    &__button {
+        display: flex;
+        justify-content: center;
+        // ANIMATION ========================================================================================================================================================
+        @extend %no-anim;
+        transform: translate(0px, 50%);
+        transition: opacity 0.8s ease 0s, visibility 0.8s ease 0s, transform 0.8s ease 0s;
+        &._watcher-view {
+            @extend %anim;
+        }
+        // ANIMATION ========================================================================================================================================================
+    }
+}
+
+//========================================================================================================================================================
 
 // .shop {
 //     &__wrapper {
@@ -1432,7 +1463,7 @@
 //         }
 //         @extend %no-anim;
 //         transform: translate(-5%, 0px);
-//         transition: all 0.5s ease 0.5s;
+//         transition: all 0.8s ease 0.5s;
 //         &._watcher-view {
 //             @extend %anim;
 //         }
@@ -1444,7 +1475,7 @@
 //         @include adaptiveValue("left", -55, -0);
 //         @extend %text_bg;
 //         @extend %no-anim;
-//         transition: all 0.5s ease 0.3s;
+//         transition: all 0.8s ease 0.3s;
 //         &._watcher-view {
 //             @extend %anim;
 //             opacity: 0.02;

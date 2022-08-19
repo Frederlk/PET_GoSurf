@@ -33,7 +33,7 @@
 
 %text_bg {
     @extend %title;
-    @include adaptiveValue("font-size", 200, 100);
+    @include adaptiveValue("font-size", 200, 90);
     line-height: math.div(156, 200);
 }
 
