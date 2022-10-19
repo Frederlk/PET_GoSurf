@@ -1,6 +1,3 @@
-// Подключение списка активных модулей
-import { flsModules } from "./modules.js";
-
 /* Проверка поддержки webp, добавление класса webp или no-webp для HTML */
 export function isWebp() {
     // Проверка поддержки webp
@@ -36,7 +33,13 @@ export let isMobile = {
         return navigator.userAgent.match(/IEMobile/i);
     },
     any: function () {
-        return isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows();
+        return (
+            isMobile.Android() ||
+            isMobile.BlackBerry() ||
+            isMobile.iOS() ||
+            isMobile.Opera() ||
+            isMobile.Windows()
+        );
     },
 };
 
@@ -61,6 +64,7 @@ export function setHash(hash) {
 }
 // Учет плавающей панели на мобильных устройствах при 100vh
 export function fullVHfix() {
+    isMobile.any() && document.documentElement.classList.add("touch");
     const fullScreens = document.querySelectorAll("[data-fullscreen]");
     if (fullScreens.length && isMobile.any()) {
         window.addEventListener("resize", fixHeight);
@@ -71,55 +75,7 @@ export function fullVHfix() {
         fixHeight();
     }
 }
-// Вспомогательные модули блокировки прокрутки и скочка ====================================================================================================================================================================================================================================================================================
-// export let bodyLockStatus = true;
-// export let bodyLockToggle = (delay = 500) => {
-//     if (document.documentElement.classList.contains("lock")) {
-//         bodyUnlock(delay);
-//     } else {
-//         bodyLock(delay);
-//     }
-// };
-// export let bodyUnlock = (delay = 500) => {
-//     let body = document.querySelector("body");
-//     if (bodyLockStatus) {
-//         let lock_padding = document.querySelectorAll("[data-lp]");
-//         setTimeout(() => {
-//             for (let index = 0; index < lock_padding.length; index++) {
-//                 const el = lock_padding[index];
-//                 el.style.paddingRight = "0px";
-//             }
-//             body.style.paddingRight = "0px";
-//             document.documentElement.classList.remove("lock");
-//         }, delay);
-//         bodyLockStatus = false;
-//         setTimeout(function () {
-//             bodyLockStatus = true;
-//         }, delay);
-//     }
-// };
-// export let bodyLock = (delay = 500) => {
-//     let body = document.querySelector("body");
-//     if (bodyLockStatus) {
-//         let lock_padding = document.querySelectorAll("[data-lp]");
-//         for (let index = 0; index < lock_padding.length; index++) {
-//             const el = lock_padding[index];
-//             el.style.paddingRight = window.innerWidth - document.querySelector(".wrapper").offsetWidth + "px";
-//         }
-//         body.style.paddingRight = window.innerWidth - document.querySelector(".wrapper").offsetWidth + "px";
-//         document.documentElement.classList.add("lock");
 
-//         bodyLockStatus = false;
-//         setTimeout(function () {
-//             bodyLockStatus = true;
-//         }, delay);
-//     }
-// };
-// Модуль работы с меню (бургер) =======================================================================================================================================================================================================================
-/*
-Документация по работе в шаблоне: https://template.fls.guru/template-docs/menu-burger.html
-Сниппет (HTML): menu
-*/
 export function menuInit() {
     if (document.querySelector(".icon-menu")) {
         document.addEventListener("click", function (e) {
@@ -131,7 +87,11 @@ export function menuInit() {
         });
 
         document.addEventListener("keydown", function (e) {
-            if (e.which == 27 && e.code === "Escape" && document.documentElement.classList.contains("menu-open")) {
+            if (
+                e.which == 27 &&
+                e.code === "Escape" &&
+                document.documentElement.classList.contains("menu-open")
+            ) {
                 menuClose();
             }
         });
@@ -146,14 +106,7 @@ export function menuClose() {
 //================================================================================================================================================================================================================================================================================================================
 // Прочие полезные функции ================================================================================================================================================================================================================================================================================================================
 //================================================================================================================================================================================================================================================================================================================
-// FLS (Full Logging System)
-export function FLS(message) {
-    setTimeout(() => {
-        if (window.FLS) {
-            console.log(message);
-        }
-    }, 0);
-}
+
 // Убрать класс из всех элементов массива
 export function removeClasses(array, className) {
     for (var i = 0; i < array.length; i++) {
@@ -220,4 +173,3 @@ export function dataMediaQueries(array, dataSetValue) {
         }
     }
 }
-//================================================================================================================================================================================================================================================================================================================
